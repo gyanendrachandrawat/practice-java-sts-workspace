@@ -1,0 +1,4 @@
+com\example\controller\HelloWorldController.class
+com\example\model\Student.class
+com\example\service\StudentService.class
+com\example\repository\StudentRepository.class

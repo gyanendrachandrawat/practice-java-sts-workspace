@@ -1,0 +1,31 @@
+package com.practice.spring.service;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class TicketServiceTest {
+	
+	// Temporary Ticket Objects
+		private Ticket getTicket1() {
+			Ticket ticket=new Ticket();
+			ticket.setTicketId(1);
+			ticket.setPassengerName("Sean Murphy");
+			ticket.setSourceStation("Delhi");
+			ticket.setDestStation("Mumbai");
+			ticket.setBookingDate(LocalDateTime.now());
+			ticket.setEmail("sean.s2006@gmail.com");
+			return ticket;
+		}
+		
+		private Ticket getTicket2() {
+			Ticket ticket=new Ticket();
+			ticket.setTicketId(2);
+			ticket.setPassengerName("gyanendra");
+			ticket.setSourceStation("pithampur");
+			ticket.setDestStation("indore");
+			ticket.setBookingDate(LocalDateTime.now());
+			ticket.setEmail("gyanendra@email.com");
+			return ticket;
+		}
+
+}

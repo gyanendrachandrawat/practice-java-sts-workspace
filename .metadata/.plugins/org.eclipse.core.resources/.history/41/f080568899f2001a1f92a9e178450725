@@ -1,0 +1,13 @@
+package com.practice.encryption;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootAsymmetricEncryptionWithRsaSender1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootAsymmetricEncryptionWithRsaSender1Application.class, args);
+	}
+
+}

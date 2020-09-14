@@ -1,0 +1,13 @@
+localhost:8080/pocuser/user/create
+{
+	"firstName":"user1fn",
+	"lastName":"user1ln",
+	"username":"user1email.com",
+	"dob":"2001-11-10",
+	"gender":"female",
+	"type":"student",
+	"password":"user1pass"
+}
+
+localhost:8080/pocuser/user/getById/1
+

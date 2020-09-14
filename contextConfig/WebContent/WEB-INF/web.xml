@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>contextConfig</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!-- servlet config start, servlet config can be accessed by the particular specified servlet only-->
+  <servlet>
+  	<servlet-name>details</servlet-name>
+  	<servlet-class>com.servlet.contextConfig.showDetails</servlet-class>
+  	
+  	<init-param>
+  		<param-name>userid</param-name>
+  		<param-value>admin</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>userpass</param-name>
+  		<param-value>password</param-value>
+  	</init-param>
+  	<!-- servlet config end -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>details</servlet-name>
+  	<url-pattern>/getDetails</url-pattern>
+  </servlet-mapping>
+  <!-- servlet context start, servlet context can be accessed by all the servlets in the project -->
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>gyanendra</param-value>
+  </context-param>
+  <!-- servlet context end -->
+</web-app>

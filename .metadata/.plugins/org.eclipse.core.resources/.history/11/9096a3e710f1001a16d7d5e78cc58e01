@@ -1,0 +1,5 @@
+package com.practice.spring.repositories;
+
+public interface TicketRepo {
+
+}

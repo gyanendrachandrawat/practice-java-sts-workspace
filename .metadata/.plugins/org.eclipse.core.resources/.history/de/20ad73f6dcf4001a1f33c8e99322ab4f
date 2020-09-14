@@ -1,0 +1,17 @@
+package com.practice.encryption.service;
+
+import java.io.FileNotFoundException;
+
+public interface Service1 {
+
+	String decryptMessage(String message1);
+
+	String authenticateUser(String password, String message);
+
+	byte[] encryptMessageStoreInFile(String password, String fileName, String message);
+
+	byte[] decryptFile(String password, String fileName);
+
+}
+
+	

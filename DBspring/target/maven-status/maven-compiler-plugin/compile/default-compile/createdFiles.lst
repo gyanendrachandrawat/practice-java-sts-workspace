@@ -1,0 +1,4 @@
+com\DBspring\model\Student.class
+com\DBspring\repository\DBspringRepository.class
+com\DBspring\controller\DBspringController.class
+com\DBspring\service\DBspringService.class

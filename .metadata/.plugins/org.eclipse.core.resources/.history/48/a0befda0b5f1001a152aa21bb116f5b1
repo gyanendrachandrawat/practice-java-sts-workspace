@@ -1,0 +1,46 @@
+package com.practice.spring.controller;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+
+import com.practice.spring.SpringBootJunit5MockitoExampleApplication;
+import com.practice.spring.model.Ticket;
+
+@SpringBootTest(classes = SpringBootJunit5MockitoExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)	
+public class TicketControllerTest {
+	
+	@LocalServerPort
+	private int post;
+	
+	@Autowired
+	private HttpHeaders headers = new HttpHeaders();
+	
+	@Test
+	public void testCreateTicket() throws Exception {
+		Ticket ticket = new Ticket();
+		ticket.setTicketId(1);
+		ticket.setPassengerName("Martin Bingel");
+		ticket.setSourceStation("Kolkata");
+		ticket.setDestStation("Delhi");
+//		ticket.setBookingDate(LocalDateTime.now());
+		ticket.setEmail("martin.s2017@gmail.com");
+
+		String URIToCreateTicket = "/api/tickets/create";
+
+		String inputInJson = this.convertToJson(ticket);
+
+		HttpEntity<Ticket> entity = new HttpEntity<Ticket>(ticket, headers);
+		ResponseEntity<String> response = testRestTemplate.exchange(completeUri(URIToCreateTicket), HttpMethod.POST,
+				entity, String.class);
+
+		String responseInJson = response.getBody();
+		assertThat(responseInJson).isEqualTo(inputInJson);
+	}
+
+}

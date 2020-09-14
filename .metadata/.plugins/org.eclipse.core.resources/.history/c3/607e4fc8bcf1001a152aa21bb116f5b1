@@ -1,0 +1,5 @@
+package com.practice.spring.repository;
+
+public class TicketRepositoryTest {
+
+}

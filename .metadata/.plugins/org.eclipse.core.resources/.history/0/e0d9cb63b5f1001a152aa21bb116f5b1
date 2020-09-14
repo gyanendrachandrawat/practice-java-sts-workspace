@@ -1,0 +1,10 @@
+package com.practice.spring.controller;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.practice.spring.SpringBootJunit5MockitoExampleApplication;
+
+@SpringBootTest(classes = SpringBootJunit5MockitoExampleApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)	
+public class TicketControllerTest {
+
+}

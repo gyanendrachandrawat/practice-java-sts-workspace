@@ -1,0 +1,62 @@
+package com.practice.spring.service;
+
+import java.time.LocalDate;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.practice.spring.model.Ticket;
+
+@SpringBootTest
+public class TicketServiceTest {
+	
+	@Test
+	public void testCreateTicket() {
+		Ticket ticket=this.getTicket1();
+		Mockito.when(ticketBookingDao.save(ticket)).thenReturn(ticket);
+		assertEquals(ticket, ticketBookingService.createTicket(ticket));
+	}
+
+	@Test
+	public void testGetTicketById() {
+		Ticket ticket=this.getTicket1();
+		Mockito.when(ticketBookingDao.getOne(1)).thenReturn(ticket);
+		assertThat(ticketBookingService.getTicketById(1)).isEqualTo(ticket);
+	}
+	
+	@Test
+	public void testGetAllBookedTickets() {
+		Ticket ticket1=this.getTicket1();
+		Ticket ticket2=this.getTicket2();
+		
+		List<Ticket> ticketList=new ArrayList<>();
+		ticketList.add(ticket1);
+		ticketList.add(ticket2);
+		
+		Mockito.when(ticketBookingDao.findAll()).thenReturn(ticketList);
+		assertEquals(ticketList, ticketBookingService.getAllBookedTickets());
+	}
+	
+	// Temporary Ticket Objects
+		private Ticket getTicket1() {
+			Ticket ticket=new Ticket();
+			ticket.setTicketId(1);
+			ticket.setPassengerName("Sean Murphy");
+			ticket.setSourceStation("Delhi");
+			ticket.setDestStation("Mumbai");
+			ticket.setBookingDate(LocalDate.now());
+			ticket.setEmail("sean.s2006@gmail.com");
+			return ticket;
+		}
+		
+		private Ticket getTicket2() {
+			Ticket ticket=new Ticket();
+			ticket.setTicketId(2);
+			ticket.setPassengerName("gyanendra");
+			ticket.setSourceStation("pithampur");
+			ticket.setDestStation("indore");
+			ticket.setBookingDate(LocalDate.now());
+			ticket.setEmail("gyanendra@email.com");
+			return ticket;
+		}
+
+}

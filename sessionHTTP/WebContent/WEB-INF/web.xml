@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>sessionHTTP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>servlet1st</servlet-name>
+  	<servlet-class>com.servlet.sessionHTTP.firstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>servlet1st</servlet-name>
+  	<url-pattern>/servlet1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>servlet2nd</servlet-name>
+  	<servlet-class>com.servlet.sessionHTTP.secondServlet</servlet-class>
+  	<init-param>
+  		<param-name>userName</param-name>
+  		<param-value>gyan</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>userPass</param-name>
+  		<param-value>password</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Gyanendra Singh Chandrawat</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>servlet2nd</servlet-name>
+  	<url-pattern>/servlet2</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

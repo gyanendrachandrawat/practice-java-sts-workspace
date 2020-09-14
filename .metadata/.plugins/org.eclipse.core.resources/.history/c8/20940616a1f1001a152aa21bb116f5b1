@@ -1,0 +1,11 @@
+package com.practice.spring.service;
+
+import com.practice.spring.model.Ticket;
+
+public interface TicketService {
+
+	Ticket createTicket(Ticket ticket);
+
+	Ticket getTicketById(Integer ticketId);
+
+}

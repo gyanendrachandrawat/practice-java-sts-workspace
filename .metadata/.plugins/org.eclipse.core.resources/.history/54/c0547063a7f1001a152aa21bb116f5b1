@@ -1,0 +1,15 @@
+spring.jpa.properties.hibernate.format_sql=true
+spring.datasource.url=jdbc:postgresql://13.233.219.13:5432/astuteTestDb
+server.port=8080
+server.servlet.context-path=/Astute
+spring.datasource.username=postgres
+spring.datasource.password=db.astute@011#
+spring.datasource.initialize=true
+#spring.datasource.hikari.connection-timeout=200000
+#spring.datasource.hikari.minimum-idle=4
+#spring.datasource.hikari.maximum-pool-size=10
+#spring.datasource.hikari.idle-timeout=300000
+#spring.datasource.hikari.max-lifetime=1200000
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect

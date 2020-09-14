@@ -1,0 +1,53 @@
+#   FOR FIRST TOPIC ONLY
+
+#spring:
+#  kafka:
+#    client-id: square-finder
+#    bootstrap-servers:
+#      - localhost:9091
+#      - localhost:9092
+#      - localhost:9093
+#    template:
+#      default-topic: input-topic
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.LongSerializer
+#    consumer:
+#      group-id: random-consumer
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+#---
+#kafka:
+#  topic:
+#    input: input-topic
+#    even-output: square-output
+
+
+#   TO INCLUDE SECOND TOPIC
+
+#First create a new kafka topic – double-output
+
+spring:
+  kafka:
+    client-id: square-finder
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    template:
+      default-topic: input-topic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.LongSerializer
+    consumer:
+      group-id: dom-consumer
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+---
+kafka:
+  topic:
+    input: input-topic
+    odd-output: double-output
+    even-output: square-output

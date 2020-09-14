@@ -1,0 +1,35 @@
+package com.practice.encryption;
+
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+@SpringBootApplication
+public class SpringBootAsymmetricEncryptionWithRsaSender1Application implements CommandLineRunner {
+	
+//	@Autowired
+//	private Service1Impl service1Impl;
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootAsymmetricEncryptionWithRsaSender1Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+//		service1Impl.generateKeys();
+	}
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+	
+	@Bean
+	public StandardPBEStringEncryptor standardPBEStringEncryptor() {
+		return new StandardPBEStringEncryptor();
+	}
+
+}

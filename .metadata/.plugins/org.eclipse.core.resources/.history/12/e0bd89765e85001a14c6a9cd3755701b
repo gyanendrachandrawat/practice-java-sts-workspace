@@ -1,0 +1,14 @@
+
+public class Flip {
+
+	public static void main(String[] args) {
+		int num1 = 0000;
+		int num2;
+		int div = 1000;
+		for (int i = 0; i < 4; i++) {
+		int temp = num1%div;
+		}
+
+	}
+
+}

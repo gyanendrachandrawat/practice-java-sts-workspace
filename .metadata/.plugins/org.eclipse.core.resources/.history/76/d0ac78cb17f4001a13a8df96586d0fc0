@@ -1,0 +1,11 @@
+package com.practice.encryption.service;
+
+import java.security.PublicKey;
+
+public interface Service1 {
+
+	String decryptMessage(String message1);
+
+	PublicKey getPublicKey();
+
+}
